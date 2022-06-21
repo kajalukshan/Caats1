@@ -1,0 +1,227 @@
+@keyframes jauge {
+    0% {
+        transform: scaleY(0);
+    }
+
+    24% {
+        transform: scaleY(.4);
+    }
+
+    46% {
+        transform: scaleY(0.81);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+
+
+
+
+/*Je commence du plus gros au plus petit en CSS*/
+/*Le body sera toujours le premier élément sur lequel nous travaillons*/
+/*Si vous voulez des marges, une police en particulier, etc.*/
+body {
+    font-family: 'Nunito', sans-serif;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/*Ma classe main comporte mes deux blocs enfants que je veux aligner : nav et section*/
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*MENU DE NAVIGATION */
+nav {
+    text-align: center;
+    border: 1px black solid;
+    height: 700px;
+    width: 28%;
+    min-width: 230px;
+}
+
+/*Titre h2 du menu de navigation */
+nav h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/*paragraphe du menu de navigation */
+nav p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/*image du menu de navigation */
+nav img {
+    width: 170px;
+    border-radius: 50%;
+}
+
+/*Liste du menu de navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 1rem 1.5rem 1rem;
+}
+
+/*éléments de la liste du menu de navigation */
+nav ul li {
+    margin: 1rem 0;
+    background-color: #ff6363;
+    padding: 0.75rem;
+    border-radius: 35px;
+    min-width: 180px;
+    transition: all 2s;
+
+}
+
+nav ul li:hover {
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 2, 1);
+    background: -moz-radial-gradient(red, yellow, rgb(30, 144, 255)) repeat scroll 0% 0% transparent;
+    background: radial-gradient(red, yellow, rgb(30, 144, 255));
+    animation: jauge 3s;
+}
+
+
+/*lien du menu de navigation, équivalent à "nav a"*/
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav p:hover+ul {
+
+    border-top: 2px solid black;
+    transform: rotate(45);
+}
+
+
+nav p:hover+ul li {
+
+    background-color: black;
+}
+
+nav p:hover+ul li a {
+
+    color: rgb(207, 22, 22)
+}
+
+nav ul li:hover {
+    transform: scale(1.2);
+}
+
+
+
+/*SECTION*/
+
+section {
+    margin-left: 2rem;
+    width: 65%;
+}
+
+/*ARTICLE*/
+.content {
+    display: flex;
+}
+
+.content h3 {
+    margin-top: 0;
+}
+
+.content-text {
+    margin-left: 2rem;
+}
+
+article img {
+    width: 250px;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+.small-text {
+    font-size: 0.85rem;
+}
+
+a {
+    color: #ff6363;
+}
+
+p {
+    line-height: 0.3rem;
+}
+
+/*FORM */
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+form input {
+    border: none;
+}
+
+.form label {
+    font-weight: bold;
+}
+
+/*
+@media screen and (max-width:1280px) {
+
+}
+
+@media Tv {
+
+}
+@all and (min-width:980px) and (max-width:1280px){
+
+}
+@media all and (orientation:landscape){
+
+}
+@media print not projection{
+
+}
+
+@media only projection{
+
+}
+@media screen and (max-width:1024px){
+p{
+    color:white;
+    background: black;
+    font-size: 1.5rem;
+}
+}
+
+*/
+
+    /* For mobile phones: */
+
+  @media all and (max-device-width:480px){
+    .main{
+        flex-direction: column ;
+    }
+   .content{
+    flex-direction: column;
+   }
+   form{
+    flex-direction: column;
+    margin-left: 0 1rem;
+   }
+
+section{
+    width:100%;
+    margin-left:1;
+}
+
+
+}
